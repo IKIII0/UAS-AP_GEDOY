@@ -132,10 +132,6 @@ int main(){
     while (true){
         system("pause");
         system("cls");
-        if (plat_kendaraan.size() >= 20 || jumlah_mobil >= 20){ //jika plat kendaraan sudah mencapai 20 atau lebih
-                cout << "Maaf, parkiran hanya dapat memuat 20 mobil !" << endl;
-                return 0; //keluar dari program
-            }
         hiasan();
         //menampilkan nama dan id dari petugas
         cout << "Nama Petugas : " << *nama_petugas << endl;
@@ -156,7 +152,7 @@ int main(){
         if (pilih == 1){
             cout << "Masukan jumlah mobil yang akan dipakirkan : "; cin >> jumlah_mobil;
             cin.ignore();
-            if (plat_kendaraan.size() >= 20 || jumlah_mobil >= 20){ //jika plat kendaraan sudah mencapai 20 atau lebih
+            if (plat_kendaraan.size() > 19 || jumlah_mobil > 20){ //jika plat kendaraan sudah mencapai 20 atau lebih
                 cout << "Maaf, parkiran hanya dapat memuat 20 mobil !" << endl;
                 return 0; //keluar dari program
             }
