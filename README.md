@@ -10,6 +10,6 @@ Nama anggota:
 
 Deskripsi Program: Program Parkir, program yang memudahkan tukang parkir untuk mengatur pembayaran parkir dengan mudah
 
-Link Screenshot: 
+Link Screenshot: https://drive.google.com/drive/folders/1JQ4edAOA8ZGJpdCeDdDIJYQP1r9RpAfd?usp=drive_link
 
-Link YouTube: 
+Link YouTube: https://youtu.be/QSk7llFy7Kk
