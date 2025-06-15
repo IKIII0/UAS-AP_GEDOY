@@ -115,6 +115,10 @@ void pembayaran(){
 }
 
 int main(){
+    if (plat_kendaraan.size() == 20 || plat_kendaraan.size() > 20){ //jika plat kendaraan sudah mencapai 20
+        cout << "Maaf, parkiran hanya dapat memuat 20 mobil !" << endl;
+        return 0; //keluar dari program
+    }
     system("cls");
     petugas petugas;
     string *nama_petugas = &petugas.nama,*id_petugas = &petugas.id; //membuat pointer dengan berisikan alamat nama petugas dan id dari petugas
