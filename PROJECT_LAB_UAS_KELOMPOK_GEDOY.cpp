@@ -115,27 +115,27 @@ void pembayaran(){
 }
 
 int main(){
-    if (plat_kendaraan.size() == 20 || plat_kendaraan.size() > 20){ //jika plat kendaraan sudah mencapai 20
-        cout << "Maaf, parkiran hanya dapat memuat 20 mobil !" << endl;
-        return 0; //keluar dari program
-    }
     system("cls");
     petugas petugas;
     string *nama_petugas = &petugas.nama,*id_petugas = &petugas.id; //membuat pointer dengan berisikan alamat nama petugas dan id dari petugas
     kendaraan mobil;
     int pilih, jumlah_mobil;
-
+    
     hiasan_utama();
     cout << "Kami senang Anda telah hadir." << endl;
     cout << "Sebelum melanjutkan, silahkan masukkan informasi Anda yang akan bertugas hari ini.\n" << endl;
-
-
+    
+    
     cout << "Masukkan nama : "; getline(cin, *nama_petugas);
     cout << "Masukkan ID   : "; cin >> *id_petugas;
-
+    
     while (true){
         system("pause");
         system("cls");
+        if (plat_kendaraan.size() >= 20 || jumlah_mobil >= 20){ //jika plat kendaraan sudah mencapai 20 atau lebih
+                cout << "Maaf, parkiran hanya dapat memuat 20 mobil !" << endl;
+                return 0; //keluar dari program
+            }
         hiasan();
         //menampilkan nama dan id dari petugas
         cout << "Nama Petugas : " << *nama_petugas << endl;
@@ -151,11 +151,15 @@ int main(){
         cout << "3. Pembayaran" << endl;
         cout << "4. Keluar Program" << endl;
         cout << "Masukkan opsi : "; cin >> pilih;
-
+        
         //menambah mobil
         if (pilih == 1){
             cout << "Masukan jumlah mobil yang akan dipakirkan : "; cin >> jumlah_mobil;
             cin.ignore();
+            if (plat_kendaraan.size() >= 20 || jumlah_mobil >= 20){ //jika plat kendaraan sudah mencapai 20 atau lebih
+                cout << "Maaf, parkiran hanya dapat memuat 20 mobil !" << endl;
+                return 0; //keluar dari program
+            }
             for (int i = 0; i < jumlah_mobil; i++){
                 cout << "Mobil ke-" << i + 1 << endl;
                 cout << "Masukkan plat mobil  : "; getline(cin, mobil.plat);
