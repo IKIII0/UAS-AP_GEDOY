@@ -40,6 +40,16 @@ void hiasan(){
     cout << "=====================================================================================================" << endl;
 }
 
+//fungsi untuk menghias awalan
+void hiasan_utama(){
+    cout << "=====================================================================================================" << endl;
+    cout << "-------------------------------------- S E L A M A T D A T A N G ------------------------------------" << endl;
+    cout << "                                      DI PORTAL PARKIR KHUSUS MOBIL                                  " << endl;
+    cout << "                                              MALL PRIENAL                                           " << endl;
+    cout << "=====================================================================================================\n" << endl;
+    
+}
+
 // fungsi untuk menampilkan kendaraan
 void tampilkan_semua_kendaraan(){
     system("cls");
@@ -51,7 +61,7 @@ void tampilkan_semua_kendaraan(){
     //menampilkan daftar mobil yang sudah terparkir
     cout << "DAFTAR MOBIL YANG SUDAH TERPARKIR :" << endl;
     hiasan();
-    for (size_t i = 0; i < merk_kendaraan.size(); i++){
+    for (int i = 0; i < merk_kendaraan.size(); i++){
         time_t waktu_masuk = system_clock::to_time_t(waktu_kendaraan[i]); 
         system_clock::time_point waktu_sekarang = system_clock::now();
         duration<double> durasi = waktu_sekarang - waktu_kendaraan[i];
@@ -60,7 +70,7 @@ void tampilkan_semua_kendaraan(){
         cout << "Plat Mobil   : " << plat_kendaraan[i] << endl;
         cout << "Merk Mobil   : " << merk_kendaraan[i] << endl;
         cout << "Warna Mobil  : " << warna_kendaraan[i] << endl;
-        cout << "Waktu Parkir : " << put_time(localtime(&waktu_masuk), "%H jam %M menit %S detik") << endl;
+        cout << "Waktu masuk : " << put_time(localtime(&waktu_masuk), "%H:%M:%S") << endl;
         cout << fixed << setprecision(2);
         cout << "Durasi Parkir: " << durasi.count() << " detik" << endl;
         cout << "\n";
@@ -104,16 +114,6 @@ void pembayaran(){
     
 }
 
-//fungsi untuk menghias awalan
-void hiasan_utama(){
-    cout << "=====================================================================================================" << endl;
-    cout << "-------------------------------------- S E L A M A T D A T A N G ------------------------------------" << endl;
-    cout << "                                      DI PORTAL PARKIR KHUSUS MOBIL                                  " << endl;
-    cout << "                                              MALL PRIENAL                                           " << endl;
-    cout << "=====================================================================================================\n" << endl;
-    
-}
-
 int main(){
     system("cls");
     petugas petugas;
@@ -133,7 +133,7 @@ int main(){
         system("pause");
         system("cls");
         hiasan();
-        //menampilkan nama dan i ddari petugas
+        //menampilkan nama dan id dari petugas
         cout << "Nama Petugas : " << *nama_petugas << endl;
         cout << "ID Petugas   : " << *id_petugas << endl;
         cout << "                                     TERIMA KASIH ATAS KERJASAMANYA !                                " << endl;
